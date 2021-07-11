@@ -15,6 +15,22 @@ public class EmailValidation {
 		checkOptionalUserName(optionalUserName);
 		String optionalDomainName = ".in";
 		checkOptionalDomainName(optionalDomainName);
+		String emailAddress = "abc.xyz@bridgelabz.co.in";
+		checkFullEmailAddress(emailAddress);		
+		
+	}
+	private static void checkFullEmailAddress(String emailAddress) {
+		boolean isMatched = Pattern.compile("^[0-9a-zA-Z]+([.,+,_,-]{1}[0-9a-zA-Z]+)*"
+				+ "@[0-9a-zA-Z]+[.]{1}[a-zA-Z]{2,3}([.]{1}[a-zA-Z]{2})?").matcher(emailAddress).matches();
+		if (isMatched) 
+		{			
+			System.out.println("Email is valid");
+		}
+		else
+		{			
+			System.out.println("Email is invalid");
+		}
+		
 	}
 	private static void checkOptionalDomainName(String optionalDomainName) {
 		boolean isMatched = Pattern.compile("([.]{1}[a-zA-Z]{2})?").matcher(optionalDomainName).matches();
