@@ -13,6 +13,19 @@ public class EmailValidation {
 		checkTLD(TLD);
 		String optionalUserName = ".xyz";
 		checkOptionalUserName(optionalUserName);
+		String optionalDomainName = ".in";
+		checkOptionalDomainName(optionalDomainName);
+	}
+	private static void checkOptionalDomainName(String optionalDomainName) {
+		boolean isMatched = Pattern.compile("([.]{1}[a-zA-Z]{2})?").matcher(optionalDomainName).matches();
+		if (isMatched) 
+		{			
+			System.out.println("Optional domain name is correct");
+		}
+		else
+		{			
+			System.out.println("Optional domain name is not correct");
+		}
 	}
 	private static void checkOptionalUserName(String optionalUserName) {
 		boolean isMatched = Pattern.compile("(^[.,+,_,-]{1}[0-9a-zA-Z]+)*").matcher(optionalUserName).matches();
