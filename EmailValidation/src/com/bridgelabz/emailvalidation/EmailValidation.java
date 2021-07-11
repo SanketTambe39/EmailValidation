@@ -11,6 +11,19 @@ public class EmailValidation {
 		checkDomainName(domainName);
 		String TLD = ".co";
 		checkTLD(TLD);
+		String optionalUserName = ".xyz";
+		checkOptionalUserName(optionalUserName);
+	}
+	private static void checkOptionalUserName(String optionalUserName) {
+		boolean isMatched = Pattern.compile("(^[.,+,_,-]{1}[0-9a-zA-Z]+)*").matcher(optionalUserName).matches();
+		if (isMatched) 
+		{			
+			System.out.println("optional user name is correct");
+		}
+		else
+		{			
+			System.out.println("optional user name is not correct");
+		}
 	}
 	private static void checkTLD(String TLD) {
 		boolean isMatched = Pattern.compile(".[a-zA-Z]{2,3}").matcher(TLD).matches();
