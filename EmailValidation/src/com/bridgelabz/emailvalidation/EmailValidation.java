@@ -5,10 +5,23 @@ import java.util.regex.Pattern;
 public class EmailValidation {
 
 	public static void main(String[] args) {
-		String string = "sanket";
-		checkFirstLetter(string);
-		String str2 = "@bridgelabz";
-		checkDomainName(str2);
+		String firstLetter = "sanket";
+		checkFirstLetter(firstLetter);
+		String domainName = "@bridgelabz";
+		checkDomainName(domainName);
+		String TLD = ".co";
+		checkTLD(TLD);
+	}
+	private static void checkTLD(String TLD) {
+		boolean isMatched = Pattern.compile(".[a-zA-Z]{2,3}").matcher(TLD).matches();
+		if (isMatched) 
+		{			
+			System.out.println("Top level Domain name is correct");
+		}
+		else
+		{			
+			System.out.println("top level Domain name is not correct");
+		}
 	}
 	private static void checkDomainName(String str2) {
 
